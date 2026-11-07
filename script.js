@@ -10,7 +10,7 @@ const projetos = [
     descricao:
       "Este site. Feito do zero com HTML, CSS e JavaScript, sem frameworks.",
     tecnologias: ["HTML", "CSS", "JavaScript"],
-    repositorio: "https://github.com/IRZN/IRZN.github.io",
+    repositorio: "https://github.com/IRZN/portifolio",
     site: "",
   },
   // Exemplo de como adicionar outro projeto:
