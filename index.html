@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iury Emanuel | Desenvolvedor Full-Stack</title>
+  <meta name="description" content="Portfólio de Iury Emanuel, estudante de Engenharia de Software na PUC Minas e desenvolvedor full-stack em busca de estágio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <a class="marca" href="#inicio">Iury Emanuel</a>
+    <nav aria-label="Seções">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- INÍCIO -->
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <h1>
+          <span class="nome">Iury Emanuel</span>
+          <span class="sobrenome">Alves da Silva</span>
+        </h1>
+        <p class="hero-resumo">
+          Estudante de Engenharia de Software na PUC Minas, construindo aplicações do front ao back.
+          Procurando meu primeiro estágio em tecnologia.
+        </p>
+        <div class="acoes">
+          <a class="botao botao-principal" href="#projetos">Ver projetos</a>
+          <a class="botao botao-secundario" href="#contato">Entrar em contato</a>
+        </div>
+      </div>
+
+      <aside class="ficha" aria-label="Ficha do personagem">
+        <h2 class="ficha-titulo">Ficha do personagem</h2>
+        <dl>
+          <div><dt>Classe</dt><dd>Desenvolvedor Full-Stack</dd></div>
+          <div><dt>Guilda</dt><dd>PUC Minas</dd></div>
+          <div><dt>Formação</dt><dd>Engenharia de Software</dd></div>
+          <div><dt>Missão atual</dt><dd>Encontrar um estágio</dd></div>
+          <div><dt>Status</dt><dd><span class="status"><span class="status-ponto" aria-hidden="true"></span>Disponível para estágio</span></dd></div>
+        </dl>
+        <h3 class="ficha-subtitulo">Habilidades especiais</h3>
+        <ul class="especiais">
+          <li>Programação modular</li>
+          <li>Análise de códigos de IA</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="secao sobre" id="sobre">
+      <h2>Sobre mim</h2>
+      <div class="sobre-grade">
+        <div class="sobre-texto">
+          <p>
+            Sou formando em Engenharia de Software na PUC Minas e trabalho tanto no front-end quanto no back-end.
+            Gosto de entender o problema inteiro: da tela que a pessoa usa até a lógica que roda por trás dela.
+          </p>
+          <p>
+            Escrevo código pensando em módulos pequenos e fáceis de manter, e uso ferramentas de IA para revisar
+            e melhorar o que eu construo. Agora quero levar isso para um time de verdade, em um estágio.
+          </p>
+        </div>
+        <div class="interesses">
+          <h3>Fora do código</h3>
+          <ul>
+            <li>Jogos</li>
+            <li>RPG</li>
+            <li>Carros</li>
+            <li>Cultura japonesa</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="secao" id="habilidades">
+      <h2>Habilidades</h2>
+      <div class="habilidades-grade">
+        <div class="grupo">
+          <h3>Linguagens</h3>
+          <ul class="etiquetas">
+            <li>Java</li>
+            <li>Python</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3>Web</h3>
+          <ul class="etiquetas">
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3>Ferramentas</h3>
+          <ul class="etiquetas">
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3>Práticas</h3>
+          <ul class="etiquetas">
+            <li>Programação modular</li>
+            <li>Análise de códigos de IA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS: os cards são gerados a partir da lista em script.js -->
+    <section class="secao" id="projetos">
+      <h2>Projetos</h2>
+      <div class="projetos-grade" id="lista-projetos"></div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="secao contato" id="contato">
+      <h2>Contato</h2>
+      <p class="contato-chamada">Tem uma vaga de estágio ou quer conversar sobre um projeto? Me manda uma mensagem.</p>
+      <div class="email-linha">
+        <a class="email" href="mailto:iuryemanuel220@gmail.com">iuryemanuel220@gmail.com</a>
+        <button class="botao botao-secundario" type="button" id="copiar-email" data-email="iuryemanuel220@gmail.com">Copiar e-mail</button>
+        <span class="aviso" id="aviso-copia" role="status" aria-live="polite"></span>
+      </div>
+      <ul class="redes">
+        <li><a href="https://github.com/IRZN" target="_blank" rel="noopener noreferrer">GitHub<span class="rede-usuario">IRZN</span></a></li>
+        <!-- Troque SEU-USUARIO pelo final da URL do seu perfil no LinkedIn -->
+        <li><a href="https://www.linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer">LinkedIn<span class="rede-usuario">Iury Emanuel</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>© <span id="ano">2026</span> Iury Emanuel Alves da Silva</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
