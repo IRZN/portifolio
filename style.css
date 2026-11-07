@@ -383,33 +383,177 @@ main > section {
   color: var(--cor-texto-suave);
 }
 
-/* ---------- Habilidades ---------- */
+/* ---------- Habilidades: árvore ---------- */
 
-.habilidades-grade {
+.arvore {
+  --linha: 2px;
+  --linha-cor: var(--cor-borda);
+  --vao: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-raiz {
+  position: relative;
+  padding: 0.85rem 1.5rem;
+  background: var(--cor-superficie);
+  border: 2px solid var(--cor-roxo);
+  border-radius: 3px;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* linha que desce da raiz */
+.no-raiz::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: calc(50% - var(--linha) / 2);
+  width: var(--linha);
+  height: var(--vao);
+  background: var(--cor-roxo);
+}
+
+.ramos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  width: 100%;
+  margin-top: var(--vao);
 }
 
-.grupo h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--cor-lilas);
-  margin-bottom: 0.9rem;
-}
-
-.etiquetas {
+.ramo {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--vao);
 }
 
-.etiquetas li {
-  padding: 0.4rem 0.85rem;
+/* linha horizontal que liga os ramos */
+.ramo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--linha);
+  background: var(--cor-roxo);
+}
+
+.ramo:first-child::before {
+  left: 50%;
+}
+
+.ramo:last-child::before {
+  right: 50%;
+}
+
+/* linha que desce até cada ramo */
+.ramo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--linha) / 2);
+  width: var(--linha);
+  height: var(--vao);
+  background: var(--cor-roxo);
+}
+
+.no-ramo {
+  padding: 0.5rem 1.1rem;
   background: var(--cor-superficie);
+  border: 1px solid var(--cor-roxo);
+  border-radius: 3px;
+  color: var(--cor-lilas);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+}
+
+.folhas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.folhas li {
+  position: relative;
+  margin-top: 1.1rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--cor-fundo);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio-pequeno);
   font-size: 0.95rem;
+  text-align: center;
+}
+
+/* linha entre um nó e o próximo */
+.folhas li::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - var(--linha) / 2);
+  width: var(--linha);
+  height: 1.1rem;
+  background: var(--linha-cor);
+}
+
+/* No celular a árvore vira vertical, com um tronco à esquerda */
+@media (max-width: 700px) {
+  .arvore {
+    align-items: flex-start;
+  }
+
+  .no-raiz::after {
+    left: 1.25rem;
+  }
+
+  .ramos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-left: 3rem;
+  }
+
+  .ramo {
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .ramo::before {
+    top: calc(-1 * var(--vao));
+    bottom: 0;
+    left: -1.75rem;
+    right: auto;
+    width: var(--linha);
+    height: auto;
+  }
+
+  .ramo:first-child::before {
+    left: -1.75rem;
+  }
+
+  .ramo:last-child::before {
+    right: auto;
+    bottom: auto;
+    height: calc(var(--vao) + 1.2rem);
+  }
+
+  .ramo::after {
+    top: 1.2rem;
+    left: -1.75rem;
+    width: 1.75rem;
+    height: var(--linha);
+  }
+
+  .folhas {
+    align-items: flex-start;
+    padding-left: 1.25rem;
+  }
+
+  .folhas li::before {
+    left: 1rem;
+  }
 }
 
 /* ---------- Projetos ---------- */
@@ -554,10 +698,6 @@ main > section {
     padding-block: 3.5rem;
   }
 
-  .habilidades-grade {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .sobre-grade {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -567,10 +707,6 @@ main > section {
 @media (max-width: 520px) {
   .topo {
     position: static;
-  }
-
-  .habilidades-grade {
-    grid-template-columns: 1fr;
   }
 
   .ficha {
