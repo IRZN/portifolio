@@ -564,6 +564,59 @@ main > section {
   gap: 1.25rem;
 }
 
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.etiquetas li {
+  padding: 0.4rem 0.85rem;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  font-size: 0.95rem;
+}
+
+.projeto .projeto-tipo {
+  margin: -0.25rem 0 0.75rem;
+  color: var(--cor-lilas);
+  font-size: 0.9rem;
+}
+
+.conta-teste {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px dashed var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  font-size: 0.9rem;
+}
+
+.projeto .conta-teste-titulo {
+  margin: 0 0 0.35rem;
+  color: var(--cor-texto);
+  font-weight: 700;
+}
+
+.conta-teste dl {
+  margin: 0;
+}
+
+.conta-teste dl > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.conta-teste dt {
+  color: var(--cor-texto-suave);
+  min-width: 3.5rem;
+}
+
+.conta-teste dd {
+  margin: 0;
+  user-select: all;
+}
+
 .projeto {
   display: flex;
   flex-direction: column;
